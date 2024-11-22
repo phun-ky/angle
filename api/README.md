@@ -2,7 +2,7 @@
 
 ---
 
-> Last updated 2024-11-22T11:55:10.553Z
+> Last updated 2024-11-22T12:17:21.582Z
 
 ## Functions
 
@@ -47,7 +47,7 @@ const angleValue = angle(0, 0, 3, 4);
 
 #### Defined in
 
-main.ts:20
+[main.ts:22](https://github.com/phun-ky/angle/blob/main/src/main.ts#L22)
 
 ---
 
