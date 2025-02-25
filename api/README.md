@@ -2,7 +2,12 @@
 
 ---
 
-> Last updated 2024-11-22T12:17:21.582Z
+> Last updated 2025-02-25T09:25:06.372Z
+
+## Table of Contents
+
+- [Functions](#functions)
+  - [angle()](#angle)
 
 ## Functions
 
@@ -11,6 +16,8 @@
 ```ts
 function angle(cx, cy, ex, ey, normalize?): number;
 ```
+
+Defined in: [main.ts:20](https://github.com/phun-ky/angle/blob/main/src/main.ts#L20)
 
 Returns the angle between two sets of coordinates.
 
@@ -44,10 +51,6 @@ Parameters for `angle` do not have the required type.
 // Calculate the angle between two points
 const angleValue = angle(0, 0, 3, 4);
 ```
-
-#### Defined in
-
-[main.ts:22](https://github.com/phun-ky/angle/blob/main/src/main.ts#L22)
 
 ---
 

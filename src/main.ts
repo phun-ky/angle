@@ -1,6 +1,4 @@
-import { isUndefined } from "@phun-ky/typeof";
-// import { isNotNumber, isUndefined } from "@phun-ky/typeof";
-
+import { isNotNumber, isUndefined } from '@phun-ky/typeof';
 
 /**
  * Returns the angle between two sets of coordinates.
@@ -29,19 +27,19 @@ export const angle = (
   if (isUndefined(cx) || isUndefined(cy) || isUndefined(ex) || isUndefined(ey))
     throw new SyntaxError('Missing input for `angle`');
 
-  // if (isNotNumber(cx) || isNotNumber(cy) || isNotNumber(ex) || isNotNumber(ey))
-  //   throw TypeError(
-  //     `Parameters for \`angle\` do not have the required type. Requires number! Got: ${typeof cx} ${typeof cy} ${typeof ex} ${typeof ey}`
-  //   );
+  if (isNotNumber(cx) || isNotNumber(cy) || isNotNumber(ex) || isNotNumber(ey))
+    throw TypeError(
+      `Parameters for \`angle\` do not have the required type. Requires number! Got: ${typeof cx} ${typeof cy} ${typeof ex} ${typeof ey}`
+    );
 
   const dy = ey - cy;
   const dx = ex - cx;
 
-  let theta = Math.atan2(dy, dx); // range (-PI, PI]
+  let theta = Math.atan2(dy, dx); // range [-PI, PI]
 
-  theta *= 180 / Math.PI; // radians to degrees, range (-180, 180]
+  theta *= 180 / Math.PI; // radians to degrees, range [-180, 180]
 
-  if (normalize && theta < 0) theta += 360; // range [0, 360)
+  if (normalize && theta < 0) theta += 360; // range [0, 360]
 
   return theta;
 };

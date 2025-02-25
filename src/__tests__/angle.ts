@@ -24,4 +24,11 @@ describe('angle', () => {
       angle();
     }, SyntaxError);
   });
+
+  it('should throw a TypeError when input is of wrong type', () => {
+    assert.throws(() => {
+      // @ts-expect-error testing wrong argument type
+      angle(0, '0', 3, 4);
+    }, TypeError);
+  });
 });
