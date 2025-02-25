@@ -15,6 +15,10 @@ import { isNotNumber, isUndefined } from '@phun-ky/typeof';
  * ```ts
  * // Calculate the angle between two points
  * const angleValue = angle(0, 0, 3, 4);
+ * console.log(angleValue); // 53.13
+ * // Normalized
+ * const angleValue = angle(0, 0, -3, -4, true);
+ * console.log(angleValue); // 233.13
  * ```
  */
 export const angle = (
