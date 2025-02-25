@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.4](https://github.com/phun-ky/angle/compare/1.0.3...1.0.4) (2025-02-25)
+
+
+### Tasks
+
+* 🤖 Upgrade to `eslint@v9` ([a244e24](https://github.com/phun-ky/angle/commit/a244e2409178cabd8466ba89971ccf750c1f097e))
+
+
+### Bug
+
+* 🐛 Use correct script name. ([3ad5d69](https://github.com/phun-ky/angle/commit/3ad5d694bec5d3014ac8f6182360dfc9bf7fcd8c)), closes [#19](https://github.com/phun-ky/angle/issues/19)
+
 ## [1.0.3](https://github.com/phun-ky/angle/compare/1.0.2...1.0.3) (2025-02-18)
 
 
