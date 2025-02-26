@@ -61,7 +61,7 @@
     }
   },
   "dependencies": {
-    "@phun-ky/typeof": "^1.0.3"
+    "@phun-ky/typeof": "^1.2.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
@@ -107,7 +107,7 @@
     "unified-prettier": "^2.0.1"
   },
   "engines": {
-    "node": ">=22.8.0",
+    "node": ">=22.0.0",
     "npm": ">=10.8.2"
   },
   "publishConfig": {
