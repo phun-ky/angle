@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.5](https://github.com/phun-ky/angle/compare/1.0.4...1.0.5) (2025-02-26)
+
+
+### Tasks
+
+* 🤖 Fix markdown lint and format ([6cded83](https://github.com/phun-ky/angle/commit/6cded839ecc355d2f87acb8addd57694520c1bbd))
+* 🤖 Use correct action version ([1d7ede4](https://github.com/phun-ky/angle/commit/1d7ede46782d38b74c1c49a743518c138404cbf5))
+
+
+### Documentation
+
+* ✏️ Add output ([929353c](https://github.com/phun-ky/angle/commit/929353c0225ff7450d39e0bd4452595ba889a019))
+
 ## [1.0.4](https://github.com/phun-ky/angle/compare/1.0.3...1.0.4) (2025-02-25)
 
 
