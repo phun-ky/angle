@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.7](https://github.com/phun-ky/angle/compare/1.0.6...1.0.7) (2025-04-15)
+
+### Tasks
+
+* 🤖 bump the major-updates group across 1 directory with 11 updates ([b7919c7](https://github.com/phun-ky/angle/commit/b7919c79766a8f5ca192f26820f845fdc2abe1ee))
+
 ## [1.0.6](https://github.com/phun-ky/angle/compare/1.0.5...1.0.6) (2025-03-03)
 
 
