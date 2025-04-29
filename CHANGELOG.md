@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.11](https://github.com/phun-ky/angle/compare/1.0.10...1.0.11) (2025-04-29)
+
+### Tasks
+
+* 🤖 bump typedoc-plugin-remark in the major-updates group ([bb6dfaf](https://github.com/phun-ky/angle/commit/bb6dfaf1a77b7505b9377c00260c349a3a7c7b6b))
+
 ## [1.0.10](https://github.com/phun-ky/angle/compare/1.0.9...1.0.10) (2025-04-29)
 
 ### Tasks
