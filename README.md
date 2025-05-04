@@ -14,7 +14,7 @@
 
 ## About
 
-A JS function to calculate the angle between two coordinates.
+A JavaScript function to calculate the angle between two coordinates.
 
 ## Table of Contents<!-- omit from toc -->
 
