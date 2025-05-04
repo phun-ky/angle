@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.13](https://github.com/phun-ky/angle/compare/1.0.12...1.0.13) (2025-05-04)
+
+### Tasks
+
+* 🤖 Add `@phun-ky/eslint-config` and redude deps ([3d70812](https://github.com/phun-ky/angle/commit/3d70812cf02afba2bb52b268ca03b5eebbe714d7))
+
 ## [1.0.12](https://github.com/phun-ky/angle/compare/1.0.11...1.0.12) (2025-05-04)
 
 ### Tasks
