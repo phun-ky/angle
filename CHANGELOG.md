@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.0.11](https://github.com/phun-ky/angle/compare/1.0.10...1.0.11) (2025-04-29)
+
+### Tasks
+
+* 🤖 bump typedoc-plugin-remark in the major-updates group ([bb6dfaf](https://github.com/phun-ky/angle/commit/bb6dfaf1a77b7505b9377c00260c349a3a7c7b6b))
+
+## [1.0.10](https://github.com/phun-ky/angle/compare/1.0.9...1.0.10) (2025-04-29)
+
+### Tasks
+
+* 🤖 bump the minor-and-patch group with 5 updates ([d130f7c](https://github.com/phun-ky/angle/commit/d130f7c2f0ff73f85b75eb76f12c5f9f7a2d3209))
+
+## [1.0.9](https://github.com/phun-ky/angle/compare/1.0.8...1.0.9) (2025-04-22)
+
+### Tasks
+
+* 🤖 bump the major-updates group with 2 updates ([05da224](https://github.com/phun-ky/angle/commit/05da224064e59383ec5607f9db973443d6f48372))
+
+## [1.0.8](https://github.com/phun-ky/angle/compare/1.0.7...1.0.8) (2025-04-21)
+
+### Tasks
+
+* 🤖 bump the minor-and-patch group with 19 updates ([6078551](https://github.com/phun-ky/angle/commit/6078551f3a6b17d5577cc6e9e6d9a5083db2b877))
+
+## [1.0.7](https://github.com/phun-ky/angle/compare/1.0.6...1.0.7) (2025-04-15)
+
+### Tasks
+
+* 🤖 bump the major-updates group across 1 directory with 11 updates ([b7919c7](https://github.com/phun-ky/angle/commit/b7919c79766a8f5ca192f26820f845fdc2abe1ee))
+
+## [1.0.6](https://github.com/phun-ky/angle/compare/1.0.5...1.0.6) (2025-03-03)
+
+
+### Tasks
+
+* 🤖 bump the minor-and-patch group with 6 updates ([1318628](https://github.com/phun-ky/angle/commit/1318628ac91e1c9055d5f7b18216a636b5377b11))
+
 ## [1.0.5](https://github.com/phun-ky/angle/compare/1.0.4...1.0.5) (2025-02-26)
 
 
