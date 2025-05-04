@@ -1,9 +1,10 @@
 {
   "name": "@phun-ky/angle",
   "version": "1.0.11",
-  "description": "A JS function to calculate the angle between two coordinates",
+  "description": "A JavaScript function to calculate the angle between two coordinates",
   "keywords": [
     "math",
+    "cartesian",
     "coordinates",
     "direction",
     "atan",
