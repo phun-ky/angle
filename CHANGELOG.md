@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.12](https://github.com/phun-ky/angle/compare/1.0.11...1.0.12) (2025-05-04)
+
+### Tasks
+
+* 🤖 update `@phun-ky/typeof` ([42badae](https://github.com/phun-ky/angle/commit/42badae0b3856042f069cef2237e9ad8350ea0ad))
+
+### Documentation
+
+* ✏️ Update description ([b769c68](https://github.com/phun-ky/angle/commit/b769c68ed257d0f484845adea3d260c153b96bd1))
+
 ## [1.0.11](https://github.com/phun-ky/angle/compare/1.0.10...1.0.11) (2025-04-29)
 
 ### Tasks
