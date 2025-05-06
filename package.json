@@ -46,14 +46,14 @@
     "commit": "npx git-cz",
     "docs:gen": "node ./node_modules/.bin/typedoc",
     "release": "release-it",
-    "prerollup:dev": "npm run clean",
     "rollup": "rollup -c",
+    "prerollup:dev": "npm run clean",
     "rollup:dev": "rollup -c -w",
     "style:code": "npx putout src",
     "style:format": "./node_modules/.bin/eslint -c ./eslint.config.mjs src  --fix && ./node_modules/.bin/prettier --write ./eslint.config.mjs src",
     "style:lint": "./node_modules/.bin/eslint -c ./eslint.config.mjs src && ./node_modules/.bin/prettier --check src",
-    "pretest:ci": "rm -rf coverage && mkdir -p coverage",
     "test": "glob -c \"node --import tsx --import global-jsdom/register --test --no-warnings\" \"./src/**/__tests__/**/*.[jt]s\"",
+    "pretest:ci": "rm -rf coverage && mkdir -p coverage",
     "test:ci": "glob -c \"node --import tsx --import global-jsdom/register --test --no-warnings --experimental-test-coverage --test-reporter=cobertura --test-reporter-destination=coverage/cobertura-coverage.xml --test-reporter=spec --test-reporter-destination=stdout\" \"./src/**/__tests__/**/*.[jt]s\""
   },
   "config": {
@@ -65,7 +65,6 @@
     "@phun-ky/typeof": "^1.2.2"
   },
   "devDependencies": {
-    "@phun-ky/eslint-config": "^0.1.9",
     "@release-it/conventional-changelog": "^10.0.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
@@ -75,7 +74,7 @@
     "@types/node": "^22.15.3",
     "cobertura": "^1.0.1",
     "eslint": "^9.20.0",
-    "eslint-config-prettier": "^10.1.2",
+    "eslint-config-phun-ky": "^1.0.0",
     "git-cz": "^4.9.0",
     "glob": "^11.0.1",
     "global-jsdom": "^26.0.0",
