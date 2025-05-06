@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.15](https://github.com/phun-ky/angle/compare/1.0.14...1.0.15) (2025-05-06)
+
+### Tasks
+
+* 🤖 Use new dep for eslint-config ([95f111f](https://github.com/phun-ky/angle/commit/95f111f15a3a5d11d5b046100d7f4c03f314d3d7))
+
 ## [1.0.14](https://github.com/phun-ky/angle/compare/1.0.13...1.0.14) (2025-05-05)
 
 ### Tasks
