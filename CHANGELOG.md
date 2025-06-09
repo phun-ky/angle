@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.21](https://github.com/phun-ky/angle/compare/1.0.20...1.0.21) (2025-06-09)
+
+### Tasks
+
+* 🤖 bump the minor-and-patch group with 3 updates ([ad90361](https://github.com/phun-ky/angle/commit/ad90361ca655579056647f6b07beea3e16a8527e))
+
 ## [1.0.20](https://github.com/phun-ky/angle/compare/1.0.19...1.0.20) (2025-06-02)
 
 ### Tasks
