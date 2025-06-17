@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.23](https://github.com/phun-ky/angle/compare/1.0.22...1.0.23) (2025-06-17)
+
+### Tasks
+
+* 🤖 bump @types/node in the major-updates group ([d2a758d](https://github.com/phun-ky/angle/commit/d2a758d149613ee7a274b084af55cb10fae9b6b0))
+
 ## [1.0.22](https://github.com/phun-ky/angle/compare/1.0.21...1.0.22) (2025-06-17)
 
 ### Tasks
