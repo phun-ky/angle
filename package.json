@@ -68,7 +68,7 @@
     "@release-it/conventional-changelog": "^10.0.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin": "^5.0.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@types/node": "^24.0.3",
