@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.24](https://github.com/phun-ky/angle/compare/1.0.23...1.0.24) (2025-06-24)
+
+### Tasks
+
+* 🤖 bump @stylistic/eslint-plugin in the major-updates group ([dfbb96c](https://github.com/phun-ky/angle/commit/dfbb96c3c7ce1615c86f53227bc8988a107320a4))
+
 ## [1.0.23](https://github.com/phun-ky/angle/compare/1.0.22...1.0.23) (2025-06-17)
 
 ### Tasks
