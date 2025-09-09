@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.33](https://github.com/phun-ky/angle/compare/1.0.32...1.0.33) (2025-09-09)
+
+### Tasks
+
+* 🤖 bump @phun-ky/typeof in the major-updates group ([20521b6](https://github.com/phun-ky/angle/commit/20521b65db6495466ddf83d51d2a02bb785c89da))
+
 ## [1.0.32](https://github.com/phun-ky/angle/compare/1.0.31...1.0.32) (2025-09-02)
 
 ### Tasks
