@@ -62,7 +62,7 @@
     }
   },
   "dependencies": {
-    "@phun-ky/typeof": "^1.2.2"
+    "@phun-ky/typeof": "^2.0.1"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.0",
