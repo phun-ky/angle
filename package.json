@@ -1,6 +1,6 @@
 {
   "name": "@phun-ky/angle",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "A JavaScript function to calculate the angle between two coordinates",
   "keywords": [
     "math",
