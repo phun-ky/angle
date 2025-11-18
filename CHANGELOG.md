@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.44](https://github.com/phun-ky/angle/compare/1.0.43...1.0.44) (2025-11-18)
+
+### Tasks
+
+* 🤖 bump glob from 11.0.3 to 12.0.0 in the major-updates group ([eeedeb5](https://github.com/phun-ky/angle/commit/eeedeb585bd761b942534a159f621d42b2e1759b))
+
 ## [1.0.43](https://github.com/phun-ky/angle/compare/1.0.42...1.0.43) (2025-11-13)
 
 ### Tasks
