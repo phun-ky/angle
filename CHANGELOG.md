@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.0.45](///compare/1.0.44...1.0.45) (2025-11-18)
+
 ## [1.0.44](https://github.com/phun-ky/angle/compare/1.0.43...1.0.44) (2025-11-18)
 
 ### Tasks
