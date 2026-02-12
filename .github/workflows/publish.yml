@@ -6,7 +6,7 @@ name: Publish
 on:
   pull_request:
     types: [closed]
-    branches: [ "main" ]
+    branches: ['main']
     paths:
       - '.github/**'
       - 'src/**'
@@ -29,6 +29,9 @@ jobs:
   publish:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # For git operations
+      id-token: write # < REQUIRED FOR OIDC
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -46,7 +49,7 @@ jobs:
         run: | # Install and link dependencies
           npm i
           git checkout -- package-lock.json
-      - name: "Release" # Interesting step
+      - name: 'Release' # Interesting step
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
@@ -63,5 +66,4 @@ jobs:
       - uses: jayqi/failed-build-issue-action@v1.2
         with:
           github-token: ${{ secrets.GH_TOKEN }}
-          label-name: "problems: build failed"
-
+          label-name: 'problems: build failed'
