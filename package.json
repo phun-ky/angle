@@ -52,9 +52,9 @@
     "style:code": "npx putout src",
     "style:format": "./node_modules/.bin/eslint -c ./eslint.config.mjs src  --fix && ./node_modules/.bin/prettier --write ./eslint.config.mjs src",
     "style:lint": "./node_modules/.bin/eslint -c ./eslint.config.mjs src && ./node_modules/.bin/prettier --check src",
-    "test": "glob -c \"node --import tsx --import global-jsdom/register --test --no-warnings\" \"./src/**/__tests__/**/*.[jt]s\"",
+    "test": "glob-bin -c \"node --import tsx --import global-jsdom/register --test --no-warnings\" \"./src/**/__tests__/**/*.[jt]s\"",
     "pretest:ci": "rm -rf coverage && mkdir -p coverage",
-    "test:ci": "glob -c \"node --import tsx --import global-jsdom/register --test --no-warnings --experimental-test-coverage --test-reporter=cobertura --test-reporter-destination=coverage/cobertura-coverage.xml --test-reporter=spec --test-reporter-destination=stdout\" \"./src/**/__tests__/**/*.[jt]s\""
+    "test:ci": "glob-bin -c \"node --import tsx --import global-jsdom/register --test --no-warnings --experimental-test-coverage --test-reporter=cobertura --test-reporter-destination=coverage/cobertura-coverage.xml --test-reporter=spec --test-reporter-destination=stdout\" \"./src/**/__tests__/**/*.[jt]s\""
   },
   "config": {
     "commitizen": {
@@ -76,7 +76,7 @@
     "eslint": "^9.20.0",
     "eslint-config-phun-ky": "^1.0.0",
     "git-cz": "^4.9.0",
-    "glob": "^13.0.1",
+    "glob-bin": "^1.0.0",
     "global-jsdom": "^28.0.0",
     "jsdom": "^28.0.0",
     "prettier": "^3.2.5",
