@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.48](https://github.com/phun-ky/angle/compare/1.0.47...1.0.48) (2026-02-17)
+
+### Tasks
+
+* 🤖 bump the minor-and-patch group with 16 updates ([9c44e29](https://github.com/phun-ky/angle/commit/9c44e29f32db9a54ffdf2447c807a7c4e4fc3ba4))
+
 ## [1.0.47](///compare/1.0.46...1.0.47) (2026-02-12)
 
 ## [1.0.46](///compare/1.0.45...1.0.46) (2025-11-25)
