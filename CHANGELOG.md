@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.50](https://github.com/phun-ky/angle/compare/1.0.49...1.0.50) (2026-02-24)
+
+### Tasks
+
+* 🤖 bump putout from 41.25.1 to 42.0.15 in the major-updates group ([b6d1464](https://github.com/phun-ky/angle/commit/b6d1464da3c5776a879e153e9823bf9be9baefd0))
+
 ## [1.0.49](https://github.com/phun-ky/angle/compare/1.0.48...1.0.49) (2026-02-24)
 
 ### Tasks
