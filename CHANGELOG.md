@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.53](https://github.com/phun-ky/angle/compare/1.0.52...1.0.53) (2026-03-10)
+
+### Tasks
+
+* 🤖 bump @rollup/plugin-terser in the major-updates group ([aabdb6b](https://github.com/phun-ky/angle/commit/aabdb6bfdd05f51bea84476a65474f4f913577ab))
+
 ## [1.0.52](https://github.com/phun-ky/angle/compare/1.0.51...1.0.52) (2026-03-10)
 
 ### Tasks
