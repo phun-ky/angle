@@ -96,7 +96,7 @@
     "typedoc-plugin-no-inherit": "^1.4.0",
     "typedoc-plugin-remark": "^2.0.0",
     "typedoc-plugin-rename-defaults": "^0.7.1",
-    "typescript": "^5.0.0",
+    "typescript": "^6.0.2",
     "unified-prettier": "^2.0.1"
   },
   "engines": {
