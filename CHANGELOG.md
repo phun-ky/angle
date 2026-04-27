@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.57](https://github.com/phun-ky/angle/compare/1.0.56...1.0.57) (2026-04-27)
+
+### Tasks
+
+* 🤖 bump the major-updates group across 1 directory with 2 updates ([fd0df89](https://github.com/phun-ky/angle/commit/fd0df8932a5f14892ff4e3cc05fd1134ac81975d))
+* 🤖 Fix deps ([8e7b053](https://github.com/phun-ky/angle/commit/8e7b0539702c9d6ce712e0e833eb7e345dd7ce77))
+
 ## [1.0.56](https://github.com/phun-ky/angle/compare/1.0.55...1.0.56) (2026-03-26)
 
 ### Tasks
