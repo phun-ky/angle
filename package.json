@@ -62,7 +62,7 @@
     }
   },
   "dependencies": {
-    "@phun-ky/typeof": "^2.0.1"
+    "@phun-ky/typeof": "^3.0.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^11.0.0",
@@ -73,8 +73,8 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@types/node": "^25.2.2",
     "cobertura": "^1.0.1",
-    "eslint": "^9.20.0",
-    "eslint-config-phun-ky": "^1.0.0",
+    "eslint": "^10.0.0",
+    "eslint-config-phun-ky": "^2.0.1",
     "git-cz": "^4.9.0",
     "glob-bin": "^1.0.0",
     "global-jsdom": "^29.0.0",
