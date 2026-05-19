@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.60](https://github.com/phun-ky/angle/compare/1.0.59...1.0.60) (2026-05-19)
+
+### Tasks
+
+* 🤖 Audit ([d42e9f3](https://github.com/phun-ky/angle/commit/d42e9f32e3ca46c00c0392cb600a518cb21be498))
+* 🤖 bump the major-updates group across 1 directory with 2 updates ([7e0044c](https://github.com/phun-ky/angle/commit/7e0044c62decfef0292313f94848e0b576658065))
+* 🤖 Update eslint ([e3fc9a5](https://github.com/phun-ky/angle/commit/e3fc9a5c623596f09c1d881d3af5d152461680eb))
+
 ## [1.0.59](https://github.com/phun-ky/angle/compare/1.0.58...1.0.59) (2026-05-19)
 
 ### Tasks
