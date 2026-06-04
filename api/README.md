@@ -2,7 +2,7 @@
 
 ---
 
-> Last updated 2026-05-26T06:52:46.372Z
+> Last updated 2026-06-04T18:09:05.284Z
 
 ## Functions
 
