@@ -2,7 +2,7 @@
 
 ---
 
-> Last updated 2026-06-04T18:09:05.284Z
+> Last updated 2026-07-12T07:48:50.457Z
 
 ## Functions
 
@@ -59,7 +59,7 @@ console.log(angleValue); // 233.13
 Want to contribute? Please read the
 [CONTRIBUTING.md](https://github.com/phun-ky/angle/blob/main/CONTRIBUTING.md)
 and
-[CODE_OF_CONDUCT.md](https://github.com/phun-ky/angle/blob/main/CODE_OF_CONDUCT.md)
+[CODE\_OF\_CONDUCT.md](https://github.com/phun-ky/angle/blob/main/CODE_OF_CONDUCT.md)
 
 **Sponsor me**
 
