@@ -71,7 +71,7 @@
     "@stylistic/eslint-plugin": "^5.0.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.2",
-    "@types/node": "^25.2.2",
+    "@types/node": "^26.1.1",
     "cobertura": "^1.0.1",
     "eslint": "^10.0.0",
     "eslint-config-phun-ky": "^2.0.1",
@@ -96,7 +96,7 @@
     "typedoc-plugin-no-inherit": "^1.4.0",
     "typedoc-plugin-remark": "^2.0.0",
     "typedoc-plugin-rename-defaults": "^0.7.1",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "unified-prettier": "^2.0.1"
   },
   "engines": {
