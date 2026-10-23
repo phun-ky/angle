@@ -32,20 +32,26 @@ const banner = `/**
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */`;
+// Runtime dependencies stay external in the ES module and CommonJS builds, and
+// are installed from npm. Only the UMD build for script tags and CDNs inlines
+// them, since a script tag can't resolve dependencies.
+const external = Object.keys(pack.dependencies ?? {});
+const plugins = () => [
+  nodeResolve(),
+  ts({
+    tsconfig: './tsconfig.build.json',
+    useTsconfigDeclarationDir: true,
+    sourceMap: false,
+    typescript
+  }),
+  terser()
+];
 
 export default [
   {
     input: 'src/main.ts',
+    external,
     output: [
-      {
-        name: 'angle',
-        file: './dist/angle.js',
-        format: 'umd',
-        sourcemap: true,
-        banner,
-        exports: 'named',
-        assetFileNames: '[name][extname]'
-      },
       {
         file: './dist/angle.cjs',
         format: 'cjs',
@@ -54,28 +60,30 @@ export default [
         exports: 'named'
       },
       {
-        name: 'angle',
         file: './dist/angle.esm.js',
         format: 'esm',
         sourcemap: true,
         banner,
-        exports: 'named',
-        assetFileNames: '[name][extname]'
+        exports: 'named'
       }
     ],
-    plugins: [
-      nodeResolve(),
-      ts({
-        tsconfig: './tsconfig.build.json',
-        useTsconfigDeclarationDir: true,
-        sourceMap: false,
-        typescript
-      }),
-      terser()
-    ]
+    plugins: plugins()
+  },
+  {
+    input: 'src/main.ts',
+    output: {
+      name: 'angle',
+      file: './dist/angle.js',
+      format: 'umd',
+      sourcemap: true,
+      banner,
+      exports: 'named'
+    },
+    plugins: plugins()
   },
   {
     input: './dts/main.d.ts',
+    external,
     output: [
       { file: './dist/angle.d.ts', format: 'es' },
       // CommonJS types for the require condition

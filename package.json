@@ -85,7 +85,6 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
-    "@phun-ky/typeof": "^3.0.0",
     "@release-it/conventional-changelog": "^12.0.2",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^1.0.0",
@@ -122,5 +121,8 @@
     "get-uri": {
       "basic-ftp": "^6.2.3"
     }
+  },
+  "dependencies": {
+    "@phun-ky/typeof": "^3.0.9"
   }
 }

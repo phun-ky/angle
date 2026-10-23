@@ -2,8 +2,9 @@
 // files package.json points at, its LICENSE, README and CHANGELOG, and no
 // tests, lint it with publint and @arethetypeswrong/cli, then install it in an
 // empty project, check every source map resolves, and call angle() through
-// import, require, the old dist path, the UMD build and a browser bundle. Run
-// after `npm run build`.
+// import, require, the old dist path, the UMD build and a browser bundle. It
+// also checks that the ES module and CommonJS builds bundle no dependencies.
+// Run after `npm run build`.
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 
@@ -38,6 +39,9 @@ const lint = (command, args) => {
     return `${error.stdout ?? ''}${error.stderr ?? ''}`.trim();
   }
 };
+// A bare package name after from, import( or require(
+const IMPORT =
+  /(?:\bfrom\s*|\bimport\s*\(?\s*|\brequire\s*\(\s*)["']([^"'.][^"']*)["']/g;
 /** Every .map file under dir. */
 const mapsIn = (dir) =>
   readdirSync(dir, { recursive: true })
@@ -125,11 +129,61 @@ try {
         '--no-audit',
         '--no-fund',
         '--ignore-scripts',
-        '--offline',
+        // The dependencies come from the registry, preferably the cache
+        '--prefer-offline',
         tarball
       ],
       app
     );
+
+    // Runtime dependencies are declared, never bundled: the ES module and
+    // CommonJS builds may not contain code from node_modules, and every
+    // package they import must be a dependency. Only the UMD build (unpkg),
+    // for script tags, may inline them.
+    const declared = new Set([
+      ...Object.keys(pkg.dependencies ?? {}),
+      ...Object.keys(pkg.peerDependencies ?? {})
+    ]);
+    const moduleBuilds = new Set(
+      [
+        pkg.exports?.['.']?.import?.default,
+        pkg.exports?.['.']?.require?.default,
+        pkg.main,
+        pkg.module
+      ]
+        .filter(Boolean)
+        .map((path) => path.replace(/^\.\//, ''))
+    );
+
+    for (const file of moduleBuilds) {
+      const code = readFileSync(join(installed, file), 'utf8');
+      const map = `${join(installed, file)}.map`;
+      const inlined = existsSync(map)
+        ? JSON.parse(readFileSync(map, 'utf8')).sources.filter((source) =>
+            source.includes('node_modules/')
+          )
+        : [];
+      const imported = [...code.matchAll(IMPORT)]
+        .map(([, specifier]) => specifier)
+        .filter((specifier) => !specifier.startsWith('node:'))
+        .map((specifier) =>
+          specifier
+            .split('/')
+            .slice(0, specifier.startsWith('@') ? 2 : 1)
+            .join('/')
+        );
+
+      for (const source of inlined) {
+        problems.push(
+          `${file} inlines ${source}; declare it in dependencies and keep it external`
+        );
+      }
+
+      for (const name of new Set(imported)) {
+        if (!declared.has(name))
+          problems.push(`${file} imports ${name}, which isn't in dependencies`);
+      }
+    }
 
     // Our own sources must be published next to the maps; bundled
     // dependencies are not installed, so their source must be embedded
