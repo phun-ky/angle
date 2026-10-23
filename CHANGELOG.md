@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.66](https://github.com/phun-ky/angle/compare/1.0.65...1.0.66) (2026-10-23)
+
+### Documentation
+
+* ✏️ fix the published README ([eae4a9c](https://github.com/phun-ky/angle/commit/eae4a9c41d71c8fe78a00a2f8bc3400a398e5066)), closes [#103](https://github.com/phun-ky/angle/issues/103)
+
 ## [1.0.65](https://github.com/phun-ky/angle/compare/1.0.64...1.0.65) (2026-10-23)
 
 ### Bug

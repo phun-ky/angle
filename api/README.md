@@ -2,7 +2,7 @@
 
 ---
 
-> Last updated 2026-10-23T09:42:37.287Z
+> Last updated 2026-10-23T09:54:42.290Z
 
 ## Functions
 
@@ -35,21 +35,21 @@ The angle between the given coordinates.
 
 #### Throws
 
-Missing input for `angle`.
+If any of the coordinates is missing.
 
 #### Throws
 
-Parameters for `angle` do not have the required type.
+If any of the coordinates is not a number.
 
 #### Example
 
 ```ts
-// Calculate the angle between two points
-const angleValue = angle(0, 0, 3, 4);
-console.log(angleValue); // 53.13
-// Normalized
-const angleValue = angle(0, 0, -3, -4, true);
-console.log(angleValue); // 233.13
+// The angle from (0, 0) to (3, 4)
+console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+// Normalized to between 0° and 360° (the default)
+console.log(angle(0, 0, -3, -4).toFixed(2)); // 233.13
+// Not normalized, between -180° and 180°
+console.log(angle(0, 0, -3, -4, false).toFixed(2)); // -126.87
 ```
 
 ---
