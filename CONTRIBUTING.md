@@ -157,9 +157,9 @@ Run `npm run check:pack` after `npm run build`.
 
 Code follows the project's [ESLint](https://eslint.org/) configuration
 (`eslint-config-phun-ky`), [Prettier](https://prettier.io/) formatting and
-TypeScript. A contribution must pass `npm run style:lint`, `npm run typecheck`
-and `npm run docs:check` with no errors. All of them run in CI on every pull
-request, and a pull request that fails them can't be merged.
+TypeScript in strict mode. A contribution must pass `npm run style:lint`,
+`npm run typecheck` and `npm run docs:check` with no errors. All of them run in
+CI on every pull request, and a pull request that fails them can't be merged.
 
 #### Tests
 

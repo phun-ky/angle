@@ -20,6 +20,8 @@ on:
       - 'custom-typedoc-plugin.js'
       - 'eslint.config.mjs'
       - '.prettierrc'
+      - '.bestpractices.json'
+      - 'security-insights.yml'
   pull_request:
     branches: ['main']
     paths: *paths
@@ -52,6 +54,8 @@ jobs:
         run: npm run check:pack
       - name: Check API docs
         run: npm run docs:check
+      - name: Check OpenSSF answers # Valid statuses, and every linked file and heading exists
+        run: npm run check:bestpractices
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with:
