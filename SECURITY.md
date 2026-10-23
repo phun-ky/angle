@@ -1,9 +1,10 @@
 # Security Policy
 
-`@phun-ky/angle` has no runtime dependencies. Its one helper package,
-`@phun-ky/typeof`, is bundled into the published files at build time. How
-dependencies are chosen, tracked and kept clear of known vulnerabilities is
-described under [Dependencies](#dependencies).
+`@phun-ky/angle` has one runtime dependency, `@phun-ky/typeof`, by the same
+maintainer. It is declared in `dependencies` and installed from npm; only the
+UMD build for script tags includes a copy of it. How dependencies are chosen,
+tracked and kept clear of known vulnerabilities is described under
+[Dependencies](#dependencies).
 
 ## Supported Versions
 
@@ -87,16 +88,19 @@ The provenance must name the repository `phun-ky/angle` and the workflow
 the attestations.
 
 Each GitHub release also has a software bill of materials attached, in CycloneDX
-format (`angle-<version>.cdx.json`), listing the packages bundled into the
-published files.
+format (`angle-<version>.cdx.json`), listing the runtime dependencies and
+marking the ones the UMD build includes.
 
 ## Dependencies
 
-**Choosing them.** The package has no runtime dependencies, and a new one is
-discussed in an issue first. It must be widely used, actively maintained and
-under an OSI-approved licence compatible with MIT; strong copyleft licences
-(GPL, AGPL) are not accepted. Development dependencies follow the same rules,
-judged more loosely.
+**Choosing them.** As few runtime dependencies as possible, and a new one is
+discussed in an issue first. Runtime dependencies are declared in `dependencies`
+and kept external in the ES module and CommonJS builds, never bundled into them;
+only the UMD build for script tags and CDNs, which can't resolve dependencies,
+includes them. `npm run check:pack` fails a build that breaks this rule. It must
+be widely used, actively maintained and under an OSI-approved licence compatible
+with MIT; strong copyleft licences (GPL, AGPL) are not accepted. Development
+dependencies follow the same rules, judged more loosely.
 
 **Obtaining them.** Packages come only from the npm registry, with exact
 versions locked in `package-lock.json` and installed with `npm ci` in CI. GitHub

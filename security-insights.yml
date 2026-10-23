@@ -78,8 +78,9 @@ repository:
         predicate-uri: https://cyclonedx.org/bom
         location: https://github.com/phun-ky/angle/releases/tag/{version}
         comment: |
-          A CycloneDX SBOM listing the packages bundled into the published
-          files, angle-{version}.cdx.json, is attached to each GitHub release.
+          A CycloneDX SBOM of the runtime dependencies, marking the ones the
+          UMD build includes, angle-{version}.cdx.json, is attached to each
+          GitHub release.
   security:
     assessments:
       self:
@@ -88,8 +89,9 @@ repository:
         comment: |
           No separate assurance case. The security expectations in
           SECURITY.md say what the package does and does not guarantee:
-          a pure function with no side effects, no dynamic code and no
-          runtime dependencies, and no range checks on its input.
+          a pure function with no side effects, no dynamic code and one
+          declared runtime dependency by the same maintainer, and no range
+          checks on its input.
     tools:
       - name: CodeQL
         type: SAST
