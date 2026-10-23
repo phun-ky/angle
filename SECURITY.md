@@ -127,9 +127,10 @@ Each one is removed as soon as a fix is reachable:
 
 ## Code Scanning
 
-CodeQL analyses every pull request and every push to `main`. OpenSSF Scorecard
-runs on every push to `main`, with results at
-<https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle>.
+CodeQL analyses every pull request and every push to `main`. The ruleset on
+`main` blocks merging while CodeQL reports an error, or a security alert of high
+or critical severity. OpenSSF Scorecard runs on every push to `main`, with
+results at <https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle>.
 
 ## Secrets
 
