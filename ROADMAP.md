@@ -21,8 +21,10 @@ package and calling it from each entry point. From here:
 
 ### Documentation
 
-- **A documentation site** at `phun-ky.net/angle`, built from the README and the
-  API documentation ([#117](https://github.com/phun-ky/angle/issues/117)).
+- **The documentation site** at <https://phun-ky.net/angle/>, with its API
+  reference generated from the source, and every code example run against the
+  packed package before it's published
+  ([#117](https://github.com/phun-ky/angle/issues/117)).
 
 ### Project health
 
