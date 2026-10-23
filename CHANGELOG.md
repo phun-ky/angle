@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.65](https://github.com/phun-ky/angle/compare/1.0.64...1.0.65) (2026-10-23)
+
+### Bug
+
+* 🐛 make the package work in Node, bundlers, browsers and TypeScript ([66e799f](https://github.com/phun-ky/angle/commit/66e799f4978e1c80c1295161970857518c64b185)), closes [#102](https://github.com/phun-ky/angle/issues/102)
+
 ## [1.0.64](https://github.com/phun-ky/angle/compare/1.0.63...1.0.64) (2026-08-08)
 
 ### Tasks
