@@ -8,17 +8,17 @@ import { isNotNumber, isUndefined } from '@phun-ky/typeof';
  * @param {number} ex - The x-coordinate of the second point.
  * @param {number} ey - The y-coordinate of the second point.
  * @param {boolean} [normalize=true] - If the angle output should be normalized to a value between 0° and 360°.
- * @throws {SyntaxError} Missing input for `angle`.
- * @throws {TypeError} Parameters for `angle` do not have the required type.
+ * @throws {SyntaxError} If any of the coordinates is missing.
+ * @throws {TypeError} If any of the coordinates is not a number.
  * @returns {number} The angle between the given coordinates.
  * @example
  * ```ts
- * // Calculate the angle between two points
- * const angleValue = angle(0, 0, 3, 4);
- * console.log(angleValue); // 53.13
- * // Normalized
- * const angleValue = angle(0, 0, -3, -4, true);
- * console.log(angleValue); // 233.13
+ * // The angle from (0, 0) to (3, 4)
+ * console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+ * // Normalized to between 0° and 360° (the default)
+ * console.log(angle(0, 0, -3, -4).toFixed(2)); // 233.13
+ * // Not normalized, between -180° and 180°
+ * console.log(angle(0, 0, -3, -4, false).toFixed(2)); // -126.87
  * ```
  */
 export const angle = (

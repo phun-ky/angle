@@ -20,32 +20,73 @@ A JavaScript function to calculate the angle between two coordinates.
 
 - [@phun-ky/angle](#phun-kyangle)
   - [About](#about)
+  - [Requirements](#requirements)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [ES modules](#es-modules)
+    - [CommonJS](#commonjs)
+    - [Browser](#browser)
   - [API](#api)
     - [angle()](#angle)
-  - [Development](#development)
   - [Contributing](#contributing)
   - [License](#license)
   - [Changelog](#changelog)
   - [Sponsor me](#sponsor-me)
 
+## Requirements
+
+Node.js 22 or later, or any browser or bundler that supports ES2022. Types are
+included.
+
 ## Installation
 
 ```shell-session
-npm i --save @phun-ky/angle
+npm i @phun-ky/angle
 ```
 
 ## Usage
 
-Either import and run the required functions:
+`angle()` returns the angle in degrees from the first point to the second,
+between 0 and 360. Pass `false` as the last argument to get a value between -180
+and 180 instead.
+
+### ES modules
 
 ```javascript
 import { angle } from '@phun-ky/angle';
 
-const angleValue = angle(0, 0, 3, 4);
+console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+console.log(angle(0, 0, -3, -4).toFixed(2)); // 233.13
+console.log(angle(0, 0, -3, -4, false).toFixed(2)); // -126.87
+```
 
-console.log(angleValue); // 53.13
+### CommonJS
+
+```javascript
+const { angle } = require('@phun-ky/angle');
+
+console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+```
+
+### Browser
+
+As an ES module:
+
+```html
+<script type="module">
+  import { angle } from 'https://unpkg.com/@phun-ky/angle@1/dist/angle.esm.js';
+
+  console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+</script>
+```
+
+Or as a script, which sets a global `angle`:
+
+```html
+<script src="https://unpkg.com/@phun-ky/angle@1"></script>
+<script>
+  console.log(angle.angle(0, 0, 3, 4).toFixed(2)); // 53.13
+</script>
 ```
 
 ## API
@@ -79,38 +120,24 @@ The angle between the given coordinates.
 
 #### Throws
 
-Missing input for `angle`.
-
-#### Throws
-
-Parameters for `angle` do not have the required type.
+- `SyntaxError` if any of the coordinates is missing.
+- `TypeError` if any of the coordinates is not a number.
 
 #### Example
 
 ```ts
-// Calculate the angle between two points
-const angleValue = angle(0, 0, 3, 4);
-console.log(angleValue); // 53.13
-// Normalized
-const angleValue = angle(0, 0, -3, -4, true);
-console.log(angleValue); // 233.13
+// The angle from (0, 0) to (3, 4)
+console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
+// Normalized to between 0° and 360° (the default)
+console.log(angle(0, 0, -3, -4).toFixed(2)); // 233.13
+// Not normalized, between -180° and 180°
+console.log(angle(0, 0, -3, -4, false).toFixed(2)); // -126.87
 ```
 
 ---
 
-Full API documentation is available
-[here](https://github.com/phun-ky/angle/blob/main/api/README.md).
-
-## Development
-
-```shell-session
-// Build
-$ npm run build
-// Run dev
-$ npm run dev
-// Test
-$ npm test
-```
+See the
+[full API documentation](https://github.com/phun-ky/angle/blob/main/api/README.md).
 
 ## Contributing
 
@@ -140,8 +167,6 @@ maintain my projects, create new ones and contribute to the large community
 we're all part of :)
 
 [Support me on GitHub Sponsors](https://github.com/sponsors/phun-ky).
-
-![Speccer banner, with logo and slogan: A zero dependency package to annotate or highlight elements](./public/angle-banner.png)
 
 p.s. **Ukraine is still under brutal Russian invasion. A lot of Ukrainian people
 are hurt, without shelter and need help**. You can help in various ways, for
