@@ -1,0 +1,137 @@
+header:
+  schema-version: 2.2.0
+  last-updated: '2026-10-23'
+  last-reviewed: '2026-10-23'
+  url: https://raw.githubusercontent.com/phun-ky/angle/main/security-insights.yml
+  comment: |
+    Security information for @phun-ky/angle, in the OpenSSF Security
+    Insights format. Keep it in step with SECURITY.md.
+
+project:
+  name: angle
+  homepage: https://github.com/phun-ky/angle#readme
+  funding: https://github.com/sponsors/phun-ky
+  administrators:
+    - name: Alexander Vassbotn Røyne-Helgesen
+      social: https://github.com/phun-ky
+      primary: true
+  documentation:
+    quickstart-guide: https://github.com/phun-ky/angle#usage
+    detailed-guide: https://github.com/phun-ky/angle/blob/main/api/README.md
+    code-of-conduct: https://github.com/phun-ky/angle/blob/main/CODE_OF_CONDUCT.md
+    support-policy: https://github.com/phun-ky/angle/blob/main/SECURITY.md#supported-versions
+    signature-verification: https://github.com/phun-ky/angle/blob/main/SECURITY.md#verifying-releases
+  repositories:
+    - name: angle
+      url: https://github.com/phun-ky/angle
+      comment: |
+        The source of the @phun-ky/angle npm package.
+  vulnerability-reporting:
+    reports-accepted: true
+    bug-bounty-available: false
+    policy: https://github.com/phun-ky/angle/blob/main/SECURITY.md
+    comment: |
+      Report privately with GitHub's private vulnerability reporting
+      (https://github.com/phun-ky/angle/security/advisories/new) or by
+      email to the contact below.
+    contact:
+      name: angle security contact
+      email: security@phun-ky.net
+      primary: true
+
+repository:
+  url: https://github.com/phun-ky/angle
+  status: active
+  accepts-change-request: true
+  accepts-automated-change-request: true
+  no-third-party-packages: false
+  core-team:
+    - name: Alexander Vassbotn Røyne-Helgesen
+      social: https://github.com/phun-ky
+      primary: true
+  documentation:
+    contributing-guide: https://github.com/phun-ky/angle/blob/main/CONTRIBUTING.md
+    security-policy: https://github.com/phun-ky/angle/blob/main/SECURITY.md
+    dependency-management-policy: https://github.com/phun-ky/angle/blob/main/SECURITY.md#dependencies
+  license:
+    url: https://github.com/phun-ky/angle/blob/main/LICENSE
+    expression: MIT
+  release:
+    automated-pipeline: true
+    changelog: https://github.com/phun-ky/angle/blob/main/CHANGELOG.md
+    distribution-points:
+      - uri: pkg:npm/%40phun-ky/angle
+        comment: npm package
+    attestations:
+      - name: npm provenance
+        predicate-uri: https://slsa.dev/provenance/v1
+        location: https://registry.npmjs.org/-/npm/v1/attestations/@phun-ky%2fangle@{version}
+        comment: |
+          Every release is published from GitHub Actions with npm trusted
+          publishing and a Sigstore-signed provenance attestation. Replace
+          {version}, or run npm audit signatures.
+      - name: SBOM
+        predicate-uri: https://cyclonedx.org/bom
+        location: https://github.com/phun-ky/angle/releases/tag/{version}
+        comment: |
+          A CycloneDX SBOM listing the packages bundled into the published
+          files, angle-{version}.cdx.json, is attached to each GitHub release.
+  security:
+    assessments:
+      self:
+        evidence: https://github.com/phun-ky/angle/blob/main/SECURITY.md#security-expectations
+        date: '2026-10-23'
+        comment: |
+          No separate assurance case. The security expectations in
+          SECURITY.md say what the package does and does not guarantee:
+          a pure function with no side effects, no dynamic code and no
+          runtime dependencies, and no range checks on its input.
+    tools:
+      - name: CodeQL
+        type: SAST
+        rulesets:
+          - default
+        integration:
+          adhoc: false
+          ci: true
+          release: false
+        results: {}
+        comment: |
+          GitHub default setup, scanning JavaScript/TypeScript and the GitHub
+          Actions workflows on every push to main and every pull request.
+      - name: Dependabot
+        type: SCA
+        rulesets:
+          - default
+        integration:
+          adhoc: true
+          ci: false
+          release: false
+        results: {}
+        comment: |
+          Weekly checks of the npm dependencies and GitHub Actions, with
+          update pull requests, and security updates for new advisories.
+      - name: Dependency Review
+        type: SCA
+        rulesets:
+          - default
+        integration:
+          adhoc: false
+          ci: true
+          release: false
+        results: {}
+        comment: |
+          Fails pull requests that add a dependency with a known high or
+          critical vulnerability. npm audit gates every release the same way.
+      - name: OpenSSF Scorecard
+        type: other
+        rulesets:
+          - default
+        integration:
+          adhoc: false
+          ci: true
+          release: false
+        results: {}
+        comment: |
+          Runs on every push to main; results at
+          https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle
