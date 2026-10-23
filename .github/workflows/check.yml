@@ -15,7 +15,6 @@ on:
       - 'rollup.config.js'
       - 'scripts/**'
       - 'tsconfig.json'
-      - '.npmrc'
   pull_request:
     branches: ['main']
     types: [opened, synchronize] # Workflow triggering events
@@ -27,7 +26,6 @@ on:
       - 'rollup.config.js'
       - 'scripts/**'
       - 'tsconfig.json'
-      - '.npmrc'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -74,4 +72,4 @@ jobs:
       - uses: jayqi/failed-build-issue-action@v1.2
         with:
           github-token: ${{ secrets.GH_TOKEN }}
-          label-name: 'problems: build failed'
+          label-name: 'problems: 💔 build failed'
