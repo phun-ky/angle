@@ -1,15 +1,21 @@
-name: "Pull Request Labeler"
+name: Pull Request Labeler
+
 on:
-- pull_request_target
+  # Runs from main with its labeler config, so labels work on fork PRs too.
+  # Nothing from the PR is checked out or run.
+  pull_request_target:
+
+permissions:
+  contents: read
 
 jobs:
   labeler:
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       pull-requests: write
-    runs-on: ubuntu-latest
     steps:
-    - id: label-the-PR
-      uses: actions/labeler@v5
-      with:
-        sync-labels: true
+      - name: Label the PR
+        uses: actions/labeler@bf12e9b00b37c5c0ca2b87b79b2daf7891dbda13 # v7.0.0
+        with:
+          sync-labels: true
