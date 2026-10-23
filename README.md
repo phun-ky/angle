@@ -11,6 +11,8 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/phun-ky/angle)
 [![codecov](https://codecov.io/gh/phun-ky/angle/graph/badge.svg?token=VA91DL7ZLZ)](https://codecov.io/gh/phun-ky/angle)
 [![build](https://github.com/phun-ky/angle/actions/workflows/check.yml/badge.svg)](https://github.com/phun-ky/angle/actions/workflows/check.yml)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15829/badge)](https://www.bestpractices.dev/projects/15829)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/phun-ky/angle/badge)](https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle)
 
 ## About
 
