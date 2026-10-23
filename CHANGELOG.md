@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.69](https://github.com/phun-ky/angle/compare/1.0.68...1.0.69) (2026-10-23)
+
+### Bug
+
+* 🐛 make the browser ES module example work again ([3331a56](https://github.com/phun-ky/angle/commit/3331a563aa6cb5e5eca9f7e347e4a8625595da80)), closes [#145](https://github.com/phun-ky/angle/issues/145)
+
 ## [1.0.68](https://github.com/phun-ky/angle/compare/1.0.67...1.0.68) (2026-10-23)
 
 ### Tasks
