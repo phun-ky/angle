@@ -1,19 +1,25 @@
 name: Auto Assign
+
 on:
   issues:
     types: [opened]
   pull_request:
     types: [opened]
+
+permissions:
+  contents: read
+
 jobs:
-  run:
-    runs-on: ubuntu-latest
+  assign:
+    # Dependabot's pull_request token is read-only, so it cannot assign
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-24.04
     permissions:
       issues: write
       pull-requests: write
     steps:
-    - name: 'Auto-assign issue'
-      uses: pozil/auto-assign-issue@v1
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Assign the maintainer
+        uses: pozil/auto-assign-issue@d6e511896e5f1d2408e74db74416647d8ff80c8c # v4.1.0
+        with:
           assignees: phun-ky
           numOfAssignee: 1
