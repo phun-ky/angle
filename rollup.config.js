@@ -48,6 +48,13 @@ export default [
         assetFileNames: '[name][extname]'
       },
       {
+        file: './dist/angle.cjs',
+        format: 'cjs',
+        sourcemap: true,
+        banner,
+        exports: 'named'
+      },
+      {
         name: 'angle',
         file: './dist/angle.esm.js',
         format: 'esm',
@@ -69,7 +76,11 @@ export default [
   },
   {
     input: './dts/main.d.ts',
-    output: [{ file: './dist/angle.d.ts', format: 'es' }],
+    output: [
+      { file: './dist/angle.d.ts', format: 'es' },
+      // CommonJS types for the require condition
+      { file: './dist/angle.d.cts', format: 'es' }
+    ],
     plugins: [dts()]
   }
 ];
