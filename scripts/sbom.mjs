@@ -1,8 +1,9 @@
-// Write a CycloneDX software bill of materials for the package to stdout. The
-// package has no runtime dependencies, but rollup bundles some packages into
-// dist, so npm's SBOM leaves them out. Every package the built source maps
-// point at is added as a component, with its version and hash from the
-// lockfile. Run after `npm run build`.
+// Write a CycloneDX software bill of materials for the package to stdout: the
+// runtime dependencies from npm's SBOM, plus every package a build inlines,
+// found from the built source maps (only the UMD build for script tags may
+// inline its dependencies). An inlined package that is also a dependency is
+// marked as bundled; one that isn't is added with its version and hash from
+// the lockfile. Run after `npm run build`.
 import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -35,11 +36,6 @@ for (const file of readdirSync(DIST).filter((name) => name.endsWith('.map'))) {
   }
 }
 
-if (bundled.size === 0) {
-  console.error('No bundled packages found in dist. Run npm run build first.');
-  process.exit(1);
-}
-
 const subject = sbom.metadata.component['bom-ref'];
 const refs = [];
 
@@ -51,6 +47,17 @@ for (const name of [...bundled].sort()) {
   if (!entry) {
     console.error(`${name} is bundled but not in package-lock.json.`);
     process.exit(1);
+  }
+
+  const BUNDLED = { name: 'cdx:npm:package:bundled', value: 'true' };
+  const declared = sbom.components.find(
+    (component) =>
+      component.name === name && component.version === entry.version
+  );
+
+  if (declared) {
+    declared.properties = [...(declared.properties ?? []), BUNDLED];
+    continue;
   }
 
   const purl = purlOf(name, entry.version);
@@ -72,7 +79,7 @@ for (const name of [...bundled].sort()) {
         content: Buffer.from(digest, 'base64').toString('hex')
       }
     ],
-    properties: [{ name: 'cdx:npm:package:bundled', value: 'true' }],
+    properties: [BUNDLED],
     externalReferences: [{ type: 'distribution', url: entry.resolved }]
   });
   refs.push(purl);

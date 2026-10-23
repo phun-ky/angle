@@ -48,6 +48,7 @@ first, and any breaking change waits for a 2.0 with an upgrading guide.
 
 ## Not planned
 
-- **Runtime dependencies.** The package stays dependency free at runtime; small
-  helpers are bundled at build time.
+- **Bundling runtime dependencies.** Runtime dependencies are declared and
+  installed from npm, never bundled into the ES module or CommonJS builds; only
+  the UMD build for script tags includes them.
 - **Collecting data.** The package doesn't collect, store or send data anywhere.
