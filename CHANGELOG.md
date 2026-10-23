@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.68](https://github.com/phun-ky/angle/compare/1.0.67...1.0.68) (2026-10-23)
+
+### Tasks
+
+* 🤖 sign off every commit with a DCO hook ([b372298](https://github.com/phun-ky/angle/commit/b3722984ec8e059a3ab4e130ee5bf0aadb2e6df2)), references [#111](https://github.com/phun-ky/angle/issues/111)
+* 🤖 type-check in strict mode ([fe88034](https://github.com/phun-ky/angle/commit/fe880340439411e83d8903abccbf84bb0a331c52)), references [#113](https://github.com/phun-ky/angle/issues/113)
+
+### Documentation
+
+* ✏️ governance, roadmap and contributing guide ([b31a737](https://github.com/phun-ky/angle/commit/b31a73780e6c5198b62cbef646e842cc1413d14d)), references [#113](https://github.com/phun-ky/angle/issues/113)
+* ✏️ OpenSSF Best Practices answers for the passing level ([2b98c4c](https://github.com/phun-ky/angle/commit/2b98c4c0213da822f2ec43fe35ee4dacacdfec3d)), closes [#113](https://github.com/phun-ky/angle/issues/113)
+* ✏️ say that CodeQL results block merging ([e778f92](https://github.com/phun-ky/angle/commit/e778f926462f274b9adaf3d4c3fca27d3e688542)), closes [#111](https://github.com/phun-ky/angle/issues/111)
+* ✏️ security policy and security insights ([59aafb2](https://github.com/phun-ky/angle/commit/59aafb207359347539a12a80ba069dadfdccec74)), closes [#112](https://github.com/phun-ky/angle/issues/112)
+* ✏️ the rule against bundling runtime dependencies ([002e228](https://github.com/phun-ky/angle/commit/002e228ef9f7223204e0ce89a99e029172189bb5)), references [#139](https://github.com/phun-ky/angle/issues/139)
+
+### Bug
+
+* 🐛 declare @phun-ky/typeof as a runtime dependency ([fc3d9cc](https://github.com/phun-ky/angle/commit/fc3d9cc8919a608be65ab788e71f9ca54c2459f7)), closes [#139](https://github.com/phun-ky/angle/issues/139)
+
 ## [1.0.67](https://github.com/phun-ky/angle/compare/1.0.66...1.0.67) (2026-10-23)
 
 ### Tasks
