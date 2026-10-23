@@ -1,10 +1,11 @@
 // Check .bestpractices.json: every status is valid and has a justification.
-// Then check that every file and heading linked from it and from
+// Then check that every file, page and heading linked from it and from
 // security-insights.yml exists, so neither can go stale when a document moves.
 import { existsSync, readFileSync } from 'node:fs';
 
 const ROOT = new URL('../', import.meta.url);
 const REPO = 'https://github.com/phun-ky/angle/blob/main/';
+const SITE = 'https://phun-ky.net/angle/';
 const STATUSES = new Set(['Met', 'Unmet', 'N/A', '?']);
 const answers = JSON.parse(
   readFileSync(new URL('.bestpractices.json', ROOT), 'utf8')
@@ -25,9 +26,19 @@ const anchorsIn = (file) =>
       .map((line) => slug(line.replace(/^#+ /, '')))
   );
 /** The local file a link points to, or undefined for other sites. */
-const localFile = (url) =>
-  url.startsWith(REPO) ? url.slice(REPO.length) : undefined;
-/** Report every repository file or heading in `text` that's missing. */
+const localFile = (url) => {
+  if (url.startsWith(REPO)) return url.slice(REPO.length);
+
+  // A docs site page, built from docs/<page>.md or docs/<page>/index.md
+  if (url.startsWith(SITE)) {
+    const page = url.slice(SITE.length).replace(/\/$/, '');
+
+    return existsSync(new URL(`docs/${page}.md`, ROOT))
+      ? `docs/${page}.md`
+      : `docs/${page}${page ? '/' : ''}index.md`;
+  }
+};
+/** Report every repository file, docs page or heading in `text` that's missing. */
 const checkLinks = (label, text) => {
   for (const url of text.match(/https:\/\/[^\s)]+/g) ?? []) {
     const [target, anchor] = url.replace(/[.,;]$/, '').split('#');

@@ -1,15 +1,19 @@
 name: Checks
 
 on:
-  # Every file the check job lints, typechecks, tests, builds or packs, so a
-  # PR touching only one of them still gets the required check
+  # Every pull request, with no path filter: check is a required check, and a
+  # PR it skipped could never merge
+  pull_request:
+    branches: ['main']
+  # Pushes to main only when something the job checks changed
   push:
     branches: ['main']
-    paths: &paths
+    paths:
       - '.github/**'
       - '.githooks/**'
       - 'src/**'
       - 'scripts/**'
+      - 'docs/**'
       - '**/*.md'
       - 'package.json'
       - 'package-lock.json'
@@ -17,14 +21,10 @@ on:
       - 'tsconfig.json'
       - 'tsconfig.build.json'
       - 'typedoc.json'
-      - 'custom-typedoc-plugin.js'
       - 'eslint.config.mjs'
       - '.prettierrc'
       - '.bestpractices.json'
       - 'security-insights.yml'
-  pull_request:
-    branches: ['main']
-    paths: *paths
   workflow_dispatch:
 
 permissions:
@@ -54,6 +54,8 @@ jobs:
         run: npm run check:pack
       - name: Check API docs
         run: npm run docs:check
+      - name: Build the docs site # The deploy builds it again from main
+        run: npm run docs:build
       - name: Check OpenSSF answers # Valid statuses, and every linked file and heading exists
         run: npm run check:bestpractices
       - name: Upload coverage reports to Codecov
