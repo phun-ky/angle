@@ -16,3 +16,12 @@ These are the versions that is updated with security patches.
 ## Reporting a Vulnerability
 
 Report vulnerabilities to <security@phun-ky.net>
+
+## Accepted Exceptions
+
+Known advisories in development dependencies that do not reach the published
+package and are not reachable in how this repository uses them.
+
+| Advisory                                                                       | Package                                                                                          | Why it is accepted                                                                                            | Remove when                                               |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| [GHSA-238p-pmpm-9mq7](https://github.com/advisories/GHSA-238p-pmpm-9mq7) (low) | `katex` 0.16, through `eslint-config-phun-ky`, `@eslint/markdown` and `micromark-extension-math` | Development only. ESLint loads katex but never calls it: lint parses Markdown and never renders math to HTML. | `micromark-extension-math` allows `katex` 0.18.2 or later |
