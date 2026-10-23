@@ -42,7 +42,7 @@ unacceptable behaviour to <code-of-conduct@phun-ky.net>.
 
 > If you want to ask a question, we assume that you have read the
 > [README](https://github.com/phun-ky/angle#readme) and the
-> [API documentation](https://github.com/phun-ky/angle/blob/main/api/README.md).
+> [API documentation](https://phun-ky.net/angle/api/functions/angle).
 
 Before you ask a question, search the existing
 [issues](https://github.com/phun-ky/angle/issues) that might help you. If you
@@ -203,8 +203,8 @@ The DCO check on every pull request fails if a commit isn't signed off.
   Mark it `@deprecated` with its replacement and the major it will be removed
   in. It keeps working through one full major: deprecated during 1.x or at 2.0,
   it can be removed in 3.0 at the earliest.
-- Don't commit regenerated API docs (`api/`); each release regenerates them. Run
-  `npm run docs:check` instead.
+- Don't commit regenerated API docs (`docs/api/`); each release regenerates
+  them. Run `npm run docs:check` instead.
 - Open a pull request against `main`. The Checks workflow lints, type-checks,
   tests, builds, packs and checks the API docs; dependency review, CodeQL and
   the DCO check also run. All of them must pass.

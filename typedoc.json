@@ -3,42 +3,28 @@
   "plugin": [
     "typedoc-plugin-markdown",
     "typedoc-plugin-remark",
+    "typedoc-vitepress-theme",
     "typedoc-plugin-mdn-links",
-    "typedoc-plugin-rename-defaults",
-    "./custom-typedoc-plugin.js"
+    "typedoc-plugin-rename-defaults"
   ],
-  "out": "./api",
-  "tsconfig": "tsconfig.build.json",
-  "outputFileStrategy": "modules",
-  "interfacePropertiesFormat": "table",
-  "classPropertiesFormat": "table",
-  "enumMembersFormat": "table",
-  "typeDeclarationFormat": "htmlTable",
-  "propertyMembersFormat": "table",
-  "theme": "custom-markdown-theme",
-  "parametersFormat": "table",
   "entryPoints": ["./src/main.ts"],
   "entryPointStrategy": "resolve",
-  "readme": "./public/docs/README.md",
-  "gitRevision": "main",
+  "out": "./docs/api",
+  "docsRoot": "./docs",
   "githubPages": false,
-  "mergeReadme": true,
-  "useCodeBlocks": true,
+  "hideGenerator": true,
+  "gitRevision": "main",
+  "tsconfig": "tsconfig.build.json",
+  "readme": "none",
+  "indexFormat": "list",
+  "parametersFormat": "table",
+  "expandParameters": true,
+  "strikeDeprecatedPageTitles": true,
+  "typeDeclarationFormat": "list",
   "expandObjects": true,
+  "useCodeBlocks": true,
   "remarkPlugins": [
     "unified-prettier",
-    [
-      "remark-github",
-      {
-        "repository": "https://github.com/phun-ky/angle"
-      }
-    ],
-    [
-      "remark-toc",
-      {
-        "heading": "Table of Contents",
-        "maxDepth": 3
-      }
-    ]
+    ["remark-github", { "repository": "https://github.com/phun-ky/angle" }]
   ]
 }

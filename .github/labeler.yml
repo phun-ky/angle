@@ -23,7 +23,6 @@
           - 'tsconfig.json'
           - 'tsconfig.build.json'
           - 'typedoc.json'
-          - 'custom-typedoc-plugin.js'
           - 'scripts/**'
           - '.githooks/**'
 'context: github':
