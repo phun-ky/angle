@@ -4,6 +4,9 @@
 // empty project, check every source map resolves, and call angle() through
 // import, require, the old dist path, the UMD build and a browser bundle. Run
 // after `npm run build`.
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { rollup } from 'rollup';
+
 import { execFileSync } from 'node:child_process';
 import {
   existsSync,
@@ -18,9 +21,6 @@ import { tmpdir } from 'node:os';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInNewContext } from 'node:vm';
-
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import { rollup } from 'rollup';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const BIN = join(ROOT, 'node_modules', '.bin');

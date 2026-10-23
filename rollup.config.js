@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unused-modules */
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import dts from 'rollup-plugin-dts';
@@ -67,6 +66,7 @@ export default [
     plugins: [
       nodeResolve(),
       ts({
+        tsconfig: './tsconfig.build.json',
         useTsconfigDeclarationDir: true,
         sourceMap: false,
         typescript
