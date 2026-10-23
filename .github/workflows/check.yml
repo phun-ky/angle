@@ -1,75 +1,71 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Checks
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Every file the check job lints, typechecks, tests, builds or packs, so a
+  # PR touching only one of them still gets the required check
   push:
     branches: ['main']
-    paths:
+    paths: &paths
       - '.github/**'
       - 'src/**'
+      - 'scripts/**'
+      - '**/*.md'
       - 'package.json'
       - 'package-lock.json'
       - 'rollup.config.js'
-      - 'scripts/**'
       - 'tsconfig.json'
+      - 'tsconfig.build.json'
+      - 'typedoc.json'
+      - 'custom-typedoc-plugin.js'
+      - 'eslint.config.mjs'
+      - '.prettierrc'
   pull_request:
     branches: ['main']
-    types: [opened, synchronize] # Workflow triggering events
-    paths:
-      - '.github/**'
-      - 'src/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'rollup.config.js'
-      - 'scripts/**'
-      - 'tsconfig.json'
-
-  # Allows you to run this workflow manually from the Actions tab
+    paths: *paths
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "check"
-  check:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+permissions:
+  contents: read
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+jobs:
+  check:
+    runs-on: ubuntu-24.04
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Checkout all branches and tags
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '>=22.8.0'
+          node-version: 24
       - name: Install dependencies
-        run: | # Install and link dependencies
-          npm i
-      - name: Build # Build all packages
-        run: npm run build
-      - name: Check package
-        # Packs, installs and imports the package from every entry point
-        run: npm run check:pack
-      - name: Test
+        run: npm ci
+      - name: Lint # Code and Markdown, with Prettier
+        run: npm run style:lint
+      - name: Typecheck # Source and tests
+        run: npm run typecheck
+      - name: Test # With coverage thresholds
         run: npm run test:ci
+      - name: Build
+        run: npm run build
+      - name: Check package # Packs, installs and imports the package from every entry point
+        run: npm run check:pack
+      - name: Check API docs
+        run: npm run docs:check
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: phun-ky/angle
+          files: coverage/cobertura-coverage.xml
+
   notify:
     name: Notify failed check
     needs: check
     if: failure()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: jayqi/failed-build-issue-action@v1.2
+      - uses: drivendataorg/failed-build-issue-action@940568ce50eeef3f31a920614cefcc6102d2f930 # v1.3.0
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           label-name: 'problems: 💔 build failed'
+          create-label: false

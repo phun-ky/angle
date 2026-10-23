@@ -17,7 +17,7 @@ published_files=(
   src
   ':(exclude,glob)src/**/__tests__/**'
   rollup.config.js
-  tsconfig.json
+  tsconfig.build.json
   package.json
   package-lock.json
   README.md
