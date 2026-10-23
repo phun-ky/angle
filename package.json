@@ -89,7 +89,7 @@
     "@rollup/plugin-terser": "^1.0.0",
     "@stylistic/eslint-plugin": "^5.0.0",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
     "@types/node": "^24.19.2",
     "cobertura": "^1.0.1",
     "eslint": "^10.0.0",
