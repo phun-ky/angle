@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.67](https://github.com/phun-ky/angle/compare/1.0.66...1.0.67) (2026-10-23)
+
+### Tasks
+
+* 🤖 remove unused dev dependencies and clear dev vulnerabilities ([7690172](https://github.com/phun-ky/angle/commit/769017202ea9e798febc516fe24c51ac9ec2ee77)), references [#109](https://github.com/phun-ky/angle/issues/109)
+* 🤖 split Dependabot majors and add the Actions ecosystem ([8baaddf](https://github.com/phun-ky/angle/commit/8baaddfdee085b28340aa38ab2713b7b1c21a71f)), closes [#108](https://github.com/phun-ky/angle/issues/108), references [#101](https://github.com/phun-ky/angle/issues/101)
+
+### Bug
+
+* 🐛 drop the npm version requirement ([e8407da](https://github.com/phun-ky/angle/commit/e8407da9904c52b38a4016c309befbbac9b681f3)), closes [#109](https://github.com/phun-ky/angle/issues/109)
+
 ## [1.0.66](https://github.com/phun-ky/angle/compare/1.0.65...1.0.66) (2026-10-23)
 
 ### Documentation
