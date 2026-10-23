@@ -30,18 +30,35 @@
   "license": "MIT",
   "author": "Alexander Vassbotn Røyne-Helgesen <alexander@phun-ky.net>",
   "type": "module",
-  "main": "dist/angle.js",
-  "module": "dist/angle.esm.js",
-  "types": "dist/angle.d.ts",
+  "main": "./dist/angle.cjs",
+  "module": "./dist/angle.esm.js",
+  "types": "./dist/angle.d.ts",
+  "unpkg": "./dist/angle.js",
+  "jsdelivr": "./dist/angle.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/angle.d.ts",
+        "default": "./dist/angle.esm.js"
+      },
+      "require": {
+        "types": "./dist/angle.d.cts",
+        "default": "./dist/angle.cjs"
+      }
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+  },
+  "sideEffects": false,
   "files": [
-    "/dist/angle.esm.js",
-    "/dist/angle.esm.js.map",
-    "/dist/angle.js",
-    "/dist/angle.js.map",
-    "/dist/angle.d.ts"
+    "dist",
+    "src",
+    "!src/**/__tests__",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "npm run clean && npm run rollup",
+    "check:pack": "node scripts/check-pack.mjs",
     "clean": "rm -rf dist dts",
     "commit": "npx git-cz",
     "docs:gen": "node ./node_modules/.bin/typedoc",
@@ -61,10 +78,9 @@
       "path": "./node_modules/git-cz"
     }
   },
-  "dependencies": {
-    "@phun-ky/typeof": "^3.0.0"
-  },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@phun-ky/typeof": "^3.0.0",
     "@release-it/conventional-changelog": "^11.0.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^1.0.0",
@@ -80,6 +96,7 @@
     "global-jsdom": "^29.0.0",
     "jsdom": "^29.0.0",
     "prettier": "^3.2.5",
+    "publint": "^0.3.25",
     "putout": "^42.0.15",
     "release-it": "^20.0.0",
     "remark-github": "^12.0.0",
