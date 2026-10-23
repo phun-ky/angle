@@ -144,6 +144,7 @@ try {
       ...Object.keys(pkg.dependencies ?? {}),
       ...Object.keys(pkg.peerDependencies ?? {})
     ]);
+    const importsOf = new Map();
     const moduleBuilds = new Set(
       [
         pkg.exports?.['.']?.import?.default,
@@ -182,6 +183,29 @@ try {
       for (const name of new Set(imported)) {
         if (!declared.has(name))
           problems.push(`${file} imports ${name}, which isn't in dependencies`);
+      }
+
+      importsOf.set(file, new Set(imported));
+    }
+
+    // A browser can't resolve the bare imports of the ES module build, so the
+    // README must not load that file from a CDN as is (?module, /+esm or an
+    // import map resolve them)
+    const esmBuild = (
+      pkg.exports?.['.']?.import?.default ?? pkg.module
+    )?.replace(/^\.\//, '');
+
+    if (esmBuild && importsOf.get(esmBuild)?.size) {
+      const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
+      const raw = new RegExp(
+        `https://[^\\s'"]+/${esmBuild.replaceAll('.', '\\.')}(?!\\?module)['"\\s]`,
+        'g'
+      );
+
+      for (const [url] of readme.matchAll(raw)) {
+        problems.push(
+          `README.md loads ${url.slice(0, -1)} in a browser, but ${esmBuild} imports ${[...importsOf.get(esmBuild)].join(', ')}, which a browser can't resolve`
+        );
       }
     }
 

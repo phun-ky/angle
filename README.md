@@ -72,15 +72,18 @@ console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
 
 ### Browser
 
-As an ES module:
+As an ES module, from a CDN that resolves its dependency:
 
 ```html
 <script type="module">
-  import { angle } from 'https://unpkg.com/@phun-ky/angle@1/dist/angle.esm.js';
+  import { angle } from 'https://cdn.jsdelivr.net/npm/@phun-ky/angle@1/+esm';
 
   console.log(angle(0, 0, 3, 4).toFixed(2)); // 53.13
 </script>
 ```
+
+To load `dist/angle.esm.js` directly instead, map its dependency,
+`@phun-ky/typeof`, with an import map.
 
 Or as a script, which sets a global `angle`:
 
