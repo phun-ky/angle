@@ -50,7 +50,7 @@
       - changed-files:
           - any-glob-to-any-file:
               - '**/*.md'
-'mindless: dependencies':
+'mindless: 📦 dependencies':
   - any:
       - changed-files:
           - any-glob-to-any-file:
@@ -66,7 +66,3 @@
   - head-branch: ['^chore', 'chore']
 'improvements: 💡 enhancement':
   - head-branch: ['^improvements', 'improvements']
-
-# Add 'release' label to any PR that is opened against the `main` branch
-release:
-  - base-branch: 'main'

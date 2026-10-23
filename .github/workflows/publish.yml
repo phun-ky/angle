@@ -16,7 +16,6 @@ on:
       - 'package-lock.json'
       - 'rollup.config.js'
       - 'tsconfig.json'
-      - '.npmrc'
       - '.release-it.json'
       - 'README.md'
       - 'CONTRIBUTING.md'
@@ -55,7 +54,6 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
           npm run release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
   notify:
     name: Notify failed build
@@ -66,4 +64,4 @@ jobs:
       - uses: jayqi/failed-build-issue-action@v1.2
         with:
           github-token: ${{ secrets.GH_TOKEN }}
-          label-name: 'problems: build failed'
+          label-name: 'problems: 💔 build failed'
