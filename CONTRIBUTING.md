@@ -209,6 +209,12 @@ npm run check:pack
 `npm run check:pack` packs the package, installs it in an empty project and
 calls `angle()` from every entry point. Run it after `npm run build`.
 
+Every commit must be signed off, to certify the
+[Developer Certificate of Origin](https://developercertificate.org/). `npm ci`
+sets up a Git hook that adds the `Signed-off-by` line for you; otherwise use
+`git commit -s`. Pull requests with commits that are not signed off fail the DCO
+check.
+
 ## Attribution
 
 This guide is based on the **contributing-gen**.

@@ -62,6 +62,7 @@
     "clean": "rm -rf dist dts",
     "commit": "npx git-cz",
     "docs:gen": "node ./node_modules/.bin/typedoc",
+    "prepare": "git config core.hooksPath .githooks || true",
     "docs:check": "typedoc --emit none --treatWarningsAsErrors",
     "release": "release-it",
     "release:dry-run": ".github/scripts/should-release.sh && release-it --ci --dry-run --github.release=false --no-git.requireCleanWorkingDir --no-git.requireUpstream",
