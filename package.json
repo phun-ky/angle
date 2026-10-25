@@ -72,6 +72,7 @@
     "prerollup:dev": "npm run clean",
     "rollup:dev": "rollup -c -w",
     "style:format": "eslint . --fix",
+    "style:format-check": "prettier --check '**/*.{json,yml,yaml}'",
     "style:lint": "eslint .",
     "test": "node --import tsx --test --enable-source-maps 'src/**/__tests__/**/*.ts'",
     "pretest:ci": "rm -rf coverage && mkdir -p coverage",
