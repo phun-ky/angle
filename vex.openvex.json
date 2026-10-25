@@ -1,0 +1,21 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://github.com/phun-ky/angle/blob/main/vex.openvex.json",
+  "author": "Alexander Vassbotn Røyne-Helgesen",
+  "role": "Maintainer",
+  "timestamp": "2026-10-25T00:00:00Z",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://github.com/advisories/GHSA-238p-pmpm-9mq7",
+        "name": "GHSA-238p-pmpm-9mq7"
+      },
+      "timestamp": "2026-10-25T00:00:00Z",
+      "products": [{ "@id": "pkg:npm/%40phun-ky/angle" }],
+      "status": "not_affected",
+      "justification": "component_not_present",
+      "impact_statement": "katex is a development dependency only (eslint-config-phun-ky > @eslint/markdown > micromark-extension-math > katex) and is not a dependency of the published package. In development, ESLint loads katex but never calls it: lint parses Markdown and never renders math to HTML."
+    }
+  ]
+}

@@ -25,6 +25,7 @@ on:
       - '.prettierrc'
       - '.bestpractices.json'
       - 'security-insights.yml'
+      - 'vex.openvex.json'
   workflow_dispatch:
 
 permissions:

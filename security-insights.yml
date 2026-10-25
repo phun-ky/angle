@@ -1,7 +1,7 @@
 header:
   schema-version: 2.2.0
-  last-updated: '2026-10-23'
-  last-reviewed: '2026-10-23'
+  last-updated: '2026-10-25'
+  last-reviewed: '2026-10-25'
   url: https://raw.githubusercontent.com/phun-ky/angle/main/security-insights.yml
   comment: |
     Security information for @phun-ky/angle, in the OpenSSF Security
@@ -84,14 +84,12 @@ repository:
   security:
     assessments:
       self:
-        evidence: https://github.com/phun-ky/angle/blob/main/SECURITY.md#security-expectations
-        date: '2026-10-23'
+        evidence: https://github.com/phun-ky/angle/blob/main/ASSURANCE.md
+        date: '2026-10-25'
         comment: |
-          No separate assurance case. The security expectations in
-          SECURITY.md say what the package does and does not guarantee:
-          a pure function with no side effects, no dynamic code and one
-          declared runtime dependency by the same maintainer, and no range
-          checks on its input.
+          The assurance case covers what is protected, the threat model,
+          trust boundaries, the secure design principles applied, the
+          common weaknesses countered and the known gaps.
     tools:
       - name: CodeQL
         type: SAST
