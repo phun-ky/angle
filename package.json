@@ -18,7 +18,7 @@
     "degrees",
     "angle"
   ],
-  "homepage": "https://phun-ky.net/angle/",
+  "homepage": "https://github.com/phun-ky/angle#readme",
   "bugs": {
     "url": "https://github.com/phun-ky/angle/issues"
   },
@@ -66,9 +66,6 @@
     "docs:gen": "node ./node_modules/.bin/typedoc",
     "prepare": "git config core.hooksPath .githooks || true",
     "docs:check": "typedoc --emit none --treatWarningsAsErrors",
-    "docs:dev": "npm run docs:gen && vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
     "release": "release-it",
     "release:dry-run": ".github/scripts/should-release.sh && release-it --ci --dry-run --github.release=false --no-git.requireCleanWorkingDir --no-git.requireUpstream",
     "rollup": "rollup -c",
@@ -101,6 +98,7 @@
     "publint": "^0.3.25",
     "release-it": "^21.1.1",
     "remark-github": "^12.0.0",
+    "remark-toc": "^9.0.0",
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-typescript2": "^0.37.0",
@@ -110,11 +108,8 @@
     "typedoc-plugin-mdn-links": "^5.0.1",
     "typedoc-plugin-remark": "^2.0.0",
     "typedoc-plugin-rename-defaults": "^0.7.1",
-    "typedoc-vitepress-theme": "^1.1.4",
     "typescript": "^6.0.3",
-    "unified-prettier": "^2.0.1",
-    "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.8.1"
+    "unified-prettier": "^2.0.1"
   },
   "engines": {
     "node": ">=22.0.0"
@@ -125,9 +120,6 @@
   "overrides": {
     "get-uri": {
       "basic-ftp": "^6.2.3"
-    },
-    "vitepress": {
-      "vite": "^6.4.5"
     }
   },
   "dependencies": {
