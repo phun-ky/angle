@@ -16,7 +16,6 @@
       - any-glob-to-any-file:
           - '.editorconfig'
           - '.gitignore'
-          - '.markdownlint.json'
           - '.prettierrc'
           - '.release-it.json'
           - 'eslint.config.mjs'
