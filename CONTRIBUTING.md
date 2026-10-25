@@ -158,17 +158,18 @@ npm test
 npm run check:pack
 ```
 
-| Command                   | What it does                                                                                  |
-| ------------------------- | --------------------------------------------------------------------------------------------- |
-| `npm run build`           | Builds `dist` with rollup: an ES module, a CommonJS build, a UMD build and the types          |
-| `npm test`                | Runs the tests                                                                                |
-| `npm run test:ci`         | Runs the tests with coverage, as CI does                                                      |
-| `npm run typecheck`       | Type-checks the source and the tests                                                          |
-| `npm run style:lint`      | Lints every file, Markdown included, with ESLint and Prettier                                 |
-| `npm run style:format`    | Fixes what `style:lint` can fix                                                               |
-| `npm run check:pack`      | Packs the package, installs it in an empty project and calls `angle()` from every entry point |
-| `npm run docs:check`      | Checks the API documentation comments with TypeDoc                                            |
-| `npm run release:dry-run` | Shows whether merging would release, and the planned version and changelog                    |
+| Command                      | What it does                                                                                  |
+| ---------------------------- | --------------------------------------------------------------------------------------------- |
+| `npm run build`              | Builds `dist` with rollup: an ES module, a CommonJS build, a UMD build and the types          |
+| `npm test`                   | Runs the tests                                                                                |
+| `npm run test:ci`            | Runs the tests with coverage, as CI does                                                      |
+| `npm run typecheck`          | Type-checks the source and the tests                                                          |
+| `npm run style:lint`         | Lints every file, Markdown included, with ESLint and Prettier                                 |
+| `npm run style:format-check` | Checks the format of the JSON and YAML files with Prettier                                    |
+| `npm run style:format`       | Fixes what `style:lint` can fix                                                               |
+| `npm run check:pack`         | Packs the package, installs it in an empty project and calls `angle()` from every entry point |
+| `npm run docs:check`         | Checks the API documentation comments with TypeDoc                                            |
+| `npm run release:dry-run`    | Shows whether merging would release, and the planned version and changelog                    |
 
 Run `npm run check:pack` after `npm run build`.
 

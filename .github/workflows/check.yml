@@ -23,6 +23,7 @@ on:
       - 'custom-typedoc-plugin.js'
       - 'eslint.config.mjs'
       - '.prettierrc'
+      - '.prettierignore'
       - '.bestpractices.json'
       - 'security-insights.yml'
       - 'vex.openvex.json'
@@ -45,6 +46,8 @@ jobs:
         run: npm ci
       - name: Lint # Code and Markdown, with Prettier
         run: npm run style:lint
+      - name: Check the format of JSON and YAML files
+        run: npm run style:format-check
       - name: Typecheck # Source and tests
         run: npm run typecheck
       - name: Test # With coverage thresholds
