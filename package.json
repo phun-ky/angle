@@ -121,6 +121,9 @@
   "overrides": {
     "get-uri": {
       "basic-ftp": "^6.2.3"
+    },
+    "release-it": {
+      "undici": "^7.30.1"
     }
   },
   "dependencies": {
