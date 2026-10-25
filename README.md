@@ -48,9 +48,9 @@ npm i @phun-ky/angle
 
 ## Usage
 
-`angle()` returns the angle in degrees from the first point to the second,
-between 0 and 360. Pass `false` as the last argument to get a value between -180
-and 180 instead.
+`angle()` returns the angle in degrees from the first point to the second, from
+0 up to, but not including, 360. Pass `false` as the last argument to get a
+value between -180 and 180 instead.
 
 ### ES modules
 
@@ -109,13 +109,13 @@ Returns the angle between two sets of coordinates.
 
 #### Parameters
 
-| Parameter    | Type      | Default value | Description                                                              |
-| ------------ | --------- | ------------- | ------------------------------------------------------------------------ |
-| `cx`         | `number`  | `undefined`   | The x-coordinate of the first point.                                     |
-| `cy`         | `number`  | `undefined`   | The y-coordinate of the first point.                                     |
-| `ex`         | `number`  | `undefined`   | The x-coordinate of the second point.                                    |
-| `ey`         | `number`  | `undefined`   | The y-coordinate of the second point.                                    |
-| `normalize?` | `boolean` | `true`        | If the angle output should be normalized to a value between 0° and 360°. |
+| Parameter    | Type      | Default value | Description                                                                                 |
+| ------------ | --------- | ------------- | ------------------------------------------------------------------------------------------- |
+| `cx`         | `number`  | `undefined`   | The x-coordinate of the first point.                                                        |
+| `cy`         | `number`  | `undefined`   | The y-coordinate of the first point.                                                        |
+| `ex`         | `number`  | `undefined`   | The x-coordinate of the second point.                                                       |
+| `ey`         | `number`  | `undefined`   | The y-coordinate of the second point.                                                       |
+| `normalize?` | `boolean` | `true`        | If the angle output should be normalized to a value from 0° up to, but not including, 360°. |
 
 #### Returns
 

@@ -20,12 +20,13 @@ const difference = (a: number, b: number) =>
 const TOLERANCE = 1e-9;
 
 describe('angle properties', () => {
-  it('is between 0 and 360 when normalized (360 included, see #149)', () => {
+  it('is from 0 up to, but not including, 360 when normalized', () => {
     fc.assert(
       fc.property(coordinate, coordinate, coordinate, coordinate, (...c) => {
         const value = angle(c[0], c[1], c[2], c[3]);
 
-        assert.ok(value >= 0 && value <= 360, `got ${value}`);
+        assert.ok(value >= 0 && value < 360, `got ${value}`);
+        assert.ok(!Object.is(value, -0), 'got -0');
       })
     );
   });
@@ -112,12 +113,14 @@ describe('angle properties', () => {
 });
 
 describe('angle edge cases', () => {
-  it('returns 360 for a point just below the positive x axis (#149)', () => {
-    assert.equal(angle(0, 0, 1, -1e-300), 360);
+  it('returns 0 for a point just below the positive x axis (#149)', () => {
+    assert.ok(Object.is(angle(0, 0, 1, -1e-300), 0));
+    assert.ok(angle(0, 0, 1, -1e-300, false) < 0);
   });
 
-  it('returns -0 for a point on the positive x axis with y -0 (#149)', () => {
-    assert.ok(Object.is(angle(0, 0, 1, -0), -0));
+  it('returns 0, not -0, for a point on the positive x axis with y -0 (#149)', () => {
+    assert.ok(Object.is(angle(0, 0, 1, -0), 0));
+    assert.ok(Object.is(angle(0, 0, 1, -0, false), -0));
   });
 
   it('returns 0 for two equal points', () => {
