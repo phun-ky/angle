@@ -66,9 +66,6 @@ dependency by the same maintainer, and a build and release pipeline.
 - **Range checks:** `NaN` and `Infinity` are numbers, so they pass the type
   checks, and the result can be `NaN`. The `normalize` flag is not checked.
   Stricter checks are considered for a 2.0 in the [roadmap](ROADMAP.md).
-- **Edge results:** the normalized angle can be exactly `360` or `-0` for points
-  on or just below the positive x axis
-  ([#149](https://github.com/phun-ky/angle/issues/149)).
 - **One maintainer:** pull requests by the maintainer get no second review, and
   access to the repository and the package rests on one person; see
   [governance](GOVERNANCE.md#continuity).

@@ -135,8 +135,8 @@ The package is one function and its build:
 
 - **`src/main.ts`** exports `angle()`: it checks its four coordinates with
   `@phun-ky/typeof` (the only runtime dependency), computes `Math.atan2` of the
-  difference, converts it to degrees, and normalizes it to 0 to 360 unless told
-  not to. It keeps no state and has no side effects.
+  difference, converts it to degrees, and normalizes it to 0 up to 360 unless
+  told not to. It keeps no state and has no side effects.
 - **`rollup.config.js`** builds `dist/angle.esm.js` (ES module) and
   `dist/angle.cjs` (CommonJS), which import `@phun-ky/typeof`, and
   `dist/angle.js` (UMD, for script tags and CDNs), which includes it. TypeScript
