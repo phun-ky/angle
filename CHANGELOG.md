@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.70](https://github.com/phun-ky/angle/compare/1.0.69...1.0.70) (2026-10-25)
+
+### Tasks
+
+* 🤖 check the format of JSON and YAML files ([35d0c00](https://github.com/phun-ky/angle/commit/35d0c001beb38558a67a726965ed3fcb1e3135bc)), closes [#143](https://github.com/phun-ky/angle/issues/143)
+* 🤖 override undici under release-it ([67adf45](https://github.com/phun-ky/angle/commit/67adf45d62165b024240e921fa24ae73f33225ce)), closes [#151](https://github.com/phun-ky/angle/issues/151)
+
+### Documentation
+
+* ✏️ assurance case, architecture and VEX statements ([8ee6f5b](https://github.com/phun-ky/angle/commit/8ee6f5b59c7675993b759b7c33fc81c4ea45d354)), references [#149](https://github.com/phun-ky/angle/issues/149) [#113](https://github.com/phun-ky/angle/issues/113)
+* ✏️ documentation site at phun-ky.net/angle ([2ce77e7](https://github.com/phun-ky/angle/commit/2ce77e722e1555c8eb83363f5e85adb759479d21)), references [#117](https://github.com/phun-ky/angle/issues/117)
+* ✏️ OpenSSF Best Practices answers for silver and OSPS Baseline ([75a5c9b](https://github.com/phun-ky/angle/commit/75a5c9bc6a92b250d81bb6c98ff34498a4d921a7)), references [#113](https://github.com/phun-ky/angle/issues/113)
+* ✏️ point the docs links at the documentation site ([f7c86ac](https://github.com/phun-ky/angle/commit/f7c86ac28b493b6b6506ad4b7ca881655b13f7aa)), closes [#117](https://github.com/phun-ky/angle/issues/117)
+* ✏️ remove the documentation site ([26e9ebd](https://github.com/phun-ky/angle/commit/26e9ebddcbf2d3baeb27fbf0a11cffe1d0697f9f)), references [#117](https://github.com/phun-ky/angle/issues/117)
+
+### Bug
+
+* 🐛 keep normalized angles below 360 and never -0 ([dc32393](https://github.com/phun-ky/angle/commit/dc32393bd7d4417d2a1443a109223fb69cb3781d)), closes [#149](https://github.com/phun-ky/angle/issues/149)
+
 ## [1.0.69](https://github.com/phun-ky/angle/compare/1.0.68...1.0.69) (2026-10-23)
 
 ### Bug

@@ -2,7 +2,7 @@
 
 ---
 
-> Last updated 2026-10-23T13:43:43.781Z
+> Last updated 2026-10-25T11:15:38.029Z
 
 ## Functions
 
@@ -19,13 +19,13 @@ Returns the angle between two sets of coordinates.
 
 #### Parameters
 
-| Parameter    | Type      | Default value | Description                                                              |
-| ------------ | --------- | ------------- | ------------------------------------------------------------------------ |
-| `cx`         | `number`  | `undefined`   | The x-coordinate of the first point.                                     |
-| `cy`         | `number`  | `undefined`   | The y-coordinate of the first point.                                     |
-| `ex`         | `number`  | `undefined`   | The x-coordinate of the second point.                                    |
-| `ey`         | `number`  | `undefined`   | The y-coordinate of the second point.                                    |
-| `normalize?` | `boolean` | `true`        | If the angle output should be normalized to a value between 0° and 360°. |
+| Parameter    | Type      | Default value | Description                                                                                 |
+| ------------ | --------- | ------------- | ------------------------------------------------------------------------------------------- |
+| `cx`         | `number`  | `undefined`   | The x-coordinate of the first point.                                                        |
+| `cy`         | `number`  | `undefined`   | The y-coordinate of the first point.                                                        |
+| `ex`         | `number`  | `undefined`   | The x-coordinate of the second point.                                                       |
+| `ey`         | `number`  | `undefined`   | The y-coordinate of the second point.                                                       |
+| `normalize?` | `boolean` | `true`        | If the angle output should be normalized to a value from 0° up to, but not including, 360°. |
 
 #### Returns
 
