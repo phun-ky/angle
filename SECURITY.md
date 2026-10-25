@@ -122,8 +122,10 @@ Advisory Database:
 | Licence outside the policy | New runtime or bundled dependency | Not merged                                                                                       |
 
 **Accepted exceptions.** A vulnerability that can't be fixed yet and can't be
-exploited through this project is allowed in dependency review, and listed here.
-Each one is removed as soon as a fix is reachable:
+exploited through this project is allowed in dependency review, listed here, and
+recorded as an [OpenVEX](https://openvex.dev/) statement in
+[`vex.openvex.json`](vex.openvex.json). Each one is removed as soon as a fix is
+reachable:
 
 | Advisory                                                                       | Package      | Why it is accepted                                                                                                                                                                               | Remove when                                               |
 | ------------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
@@ -133,8 +135,10 @@ Each one is removed as soon as a fix is reachable:
 
 CodeQL analyses every pull request and every push to `main`. The ruleset on
 `main` blocks merging while CodeQL reports an error, or a security alert of high
-or critical severity. OpenSSF Scorecard runs on every push to `main`, with
-results at <https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle>.
+or critical severity. Other CodeQL alerts are fixed within 90 days, or dismissed
+with the reason when they are false positives. OpenSSF Scorecard runs on every
+push to `main`, with results at
+<https://scorecard.dev/viewer/?uri=github.com/phun-ky/angle>.
 
 ## Secrets
 
@@ -154,3 +158,8 @@ Publishing to npm needs no secret: it uses short-lived OIDC tokens from GitHub.
   available to workflows run from forks.
 - **Rotation:** at least once a year, and immediately if one may have been
   exposed.
+
+## Assurance Case
+
+Why these expectations hold, where they don't hold yet, and the threat model and
+trust boundaries behind them are set out in the [assurance case](ASSURANCE.md).

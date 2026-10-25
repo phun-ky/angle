@@ -23,6 +23,7 @@ smooths out the experience for everyone involved.
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Enhancements](#suggesting-enhancements)
   - [Contributing Code](#contributing-code)
+    - [Architecture](#architecture)
     - [Development](#development)
     - [Coding Style](#coding-style)
     - [Tests](#tests)
@@ -127,6 +128,24 @@ behaviour you'd like instead, and explains why it would be useful to most users.
 
 Larger changes are best discussed in an issue first, so the work fits the
 [roadmap](ROADMAP.md).
+
+#### Architecture
+
+The package is one function and its build:
+
+- **`src/main.ts`** exports `angle()`: it checks its four coordinates with
+  `@phun-ky/typeof` (the only runtime dependency), computes `Math.atan2` of the
+  difference, converts it to degrees, and normalizes it to 0 to 360 unless told
+  not to. It keeps no state and has no side effects.
+- **`rollup.config.js`** builds `dist/angle.esm.js` (ES module) and
+  `dist/angle.cjs` (CommonJS), which import `@phun-ky/typeof`, and
+  `dist/angle.js` (UMD, for script tags and CDNs), which includes it. TypeScript
+  declarations go to `dist/angle.d.ts` and `dist/angle.d.cts`.
+- **`package.json`** points `exports`, `main`, `module`, `types`, `unpkg` and
+  `jsdelivr` at those files.
+- **`scripts/check-pack.mjs`** checks the packed package works from every entry
+  point, and **`scripts/sbom.mjs`** writes the software bill of materials for
+  each release; see [Releases](#releases).
 
 #### Development
 
