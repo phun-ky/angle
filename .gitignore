@@ -61,7 +61,3 @@ typings/
 .next
 dts
 dist
-
-# VitePress build output and cache
-docs/.vitepress/cache
-docs/.vitepress/dist

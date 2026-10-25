@@ -19,13 +19,6 @@ package and calling it from each entry point. From here:
 - **Deprecations before removals:** a deprecated API keeps working through one
   full major.
 
-### Documentation
-
-- **The documentation site** at <https://phun-ky.net/angle/>, with its API
-  reference generated from the source, and every code example run against the
-  packed package before it's published
-  ([#117](https://github.com/phun-ky/angle/issues/117)).
-
 ### Project health
 
 - **OpenSSF Best Practices:** the passing badge, then silver and OSPS Baseline

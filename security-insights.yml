@@ -9,7 +9,7 @@ header:
 
 project:
   name: angle
-  homepage: https://phun-ky.net/angle/
+  homepage: https://github.com/phun-ky/angle#readme
   roadmap: https://github.com/phun-ky/angle/blob/main/ROADMAP.md
   funding: https://github.com/sponsors/phun-ky
   administrators:
@@ -17,8 +17,8 @@ project:
       social: https://github.com/phun-ky
       primary: true
   documentation:
-    quickstart-guide: https://phun-ky.net/angle/guide/
-    detailed-guide: https://phun-ky.net/angle/
+    quickstart-guide: https://github.com/phun-ky/angle#usage
+    detailed-guide: https://github.com/phun-ky/angle/blob/main/api/README.md
     release-process: https://github.com/phun-ky/angle/blob/main/CONTRIBUTING.md#releases
     code-of-conduct: https://github.com/phun-ky/angle/blob/main/CODE_OF_CONDUCT.md
     support-policy: https://github.com/phun-ky/angle/blob/main/SECURITY.md#supported-versions

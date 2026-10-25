@@ -141,7 +141,8 @@ console.log(angle(0, 0, -3, -4, false).toFixed(2)); // -126.87
 
 ---
 
-See the [full API documentation](https://phun-ky.net/angle/api/functions/angle).
+See the
+[full API documentation](https://github.com/phun-ky/angle/blob/main/api/README.md).
 
 ## Contributing
 
