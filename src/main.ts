@@ -7,7 +7,7 @@ import { isNotNumber, isUndefined } from '@phun-ky/typeof';
  * @param {number} cy - The y-coordinate of the first point.
  * @param {number} ex - The x-coordinate of the second point.
  * @param {number} ey - The y-coordinate of the second point.
- * @param {boolean} [normalize=true] - If the angle output should be normalized to a value between 0° and 360°.
+ * @param {boolean} [normalize=true] - If the angle output should be normalized to a value from 0° up to, but not including, 360°.
  * @throws {SyntaxError} If any of the coordinates is missing.
  * @throws {TypeError} If any of the coordinates is not a number.
  * @returns {number} The angle between the given coordinates.
@@ -43,7 +43,11 @@ export const angle = (
 
   theta *= 180 / Math.PI; // radians to degrees, range [-180, 180]
 
-  if (normalize && theta < 0) theta += 360; // range [0, 360]
+  if (normalize) {
+    if (theta < 0) theta += 360; // range [0, 360]
+
+    if (theta === 0 || theta === 360) theta = 0; // -0 and 360 become 0, range [0, 360)
+  }
 
   return theta;
 };
